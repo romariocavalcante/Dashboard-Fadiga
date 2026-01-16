@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -16,36 +17,47 @@ body {
 
 .sidebar {
   width: 260px;
-  background: #1f2933;
+  background: linear-gradient(180deg, #1f2933, #111827);
   color: #fff;
-  padding: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* ===== HEADER ===== */
+  /* ===== CONTEÚDO ===== */
 }
 .sidebar header .brand {
   font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.sidebar section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* ===== SEARCH ===== */
+  /* ===== NAV ===== */
 }
 .sidebar section .search {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 100%;
   gap: 6px;
   background: #ffffff;
   padding: 6px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid #e5e7eb;
-  box-sizing: border-box;
-  overflow: hidden;
   transition: all 0.3s ease;
 }
 .sidebar section .search input {
-  flex: 1 1 auto;
+  flex: 1;
   min-width: 0;
   border: none;
   padding: 10px 12px;
   font-size: 14px;
   background: transparent;
+  color: #111827;
 }
 .sidebar section .search input::-moz-placeholder {
   color: #9ca3af;
@@ -59,13 +71,13 @@ body {
 .sidebar section .search button {
   flex-shrink: 0;
   background: #2563eb;
-  color: #ffffff;
+  color: #fff;
   border: none;
-  padding: 10px 12px;
-  font-size: 11px;
-  border-radius: 8px;
+  padding: 9px 14px;
+  font-size: 12px;
+  border-radius: 10px;
   cursor: pointer;
-  white-space: nowrap;
+  font-weight: 600;
   transition: background 0.3s ease;
 }
 .sidebar section .search button:hover {
@@ -73,16 +85,33 @@ body {
 }
 .sidebar section .search:focus-within {
   border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+.sidebar section nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 .sidebar section nav a {
-  display: block;
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 10px;
   color: #cbd5e1;
   text-decoration: none;
-  margin: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s ease;
 }
 .sidebar section nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
   color: #fff;
+  transform: translateX(4px);
+}
+.sidebar section nav a.active {
+  background: rgba(37, 99, 235, 0.2);
+  color: #fff;
+  font-weight: 600;
 }
 
 .content {
@@ -226,4 +255,61 @@ body {
   .search button {
     padding: 10px;
   }
-}/*# sourceMappingURL=dashboard.css.map */
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    padding: 15px;
+    border-radius: 0;
+  }
+  .sidebar header {
+    text-align: center;
+  }
+  .sidebar header .brand {
+    margin-bottom: 12px;
+  }
+  .sidebar section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sidebar .search {
+    width: 100%;
+  }
+  .sidebar .search input {
+    font-size: 14px;
+  }
+  .sidebar .search button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  .sidebar nav {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .sidebar nav a {
+    margin: 6px 8px;
+    font-size: 14px;
+  }
+  .content {
+    padding: 15px;
+  }
+  .top-header {
+    justify-content: center;
+    text-align: center;
+  }
+  .cards-resume {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-extra {
+    grid-template-columns: 1fr;
+  }
+  .indicators {
+    grid-template-columns: 1fr;
+    grid-column: auto;
+  }
+}/*# sourceMappingURL=index.css.map */
