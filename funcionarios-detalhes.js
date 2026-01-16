@@ -62,3 +62,19 @@ content.innerHTML = `
         <canvas id="fatigueChart"></canvas>
     </div>
 `
+
+
+// ================== GRÁFICO FADIGA ==================
+const fatigueCtx = document.getElementById("fatigueChart");
+
+new Chart(fatigueCtx, {
+    type: "line",
+    data: {
+        labels: ["08h", "10h", "12h", "14h", "16h", "18h"],
+        datasets: [{
+            label: "Nível de Fadiga (%)",
+            data: fatigueData,
+            tension: 0.4
+        }]
+    }
+});
